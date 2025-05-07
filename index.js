@@ -1,6 +1,6 @@
-import axios from 'axios';
-import cheerio from 'cheerio';
-import fs from 'fs';
+const axios = require('axios');
+const cheerio = require('cheerio');
+const fs = require('fs');
 
 const url = 'https://www.imdb.com/chart/top';
 
@@ -12,6 +12,7 @@ async function getHTML() {
       headers: {
         'User-Agent': 
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9',
       },
     });
     return html;
